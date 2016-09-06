@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9BE0F87-6F43-4145-B318-BCB1D1AB9D24}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Proyecto_final_curso.My.MyApplication</StartupObject>
+    <RootNamespace>Proyecto_final_curso</RootNamespace>
+    <AssemblyName>Proyecto_final_curso</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Proyecto_final_curso.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Proyecto_final_curso.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data">
+      <HintPath>F:\conector mysql para vb.net\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controlador\BaseDeDatos.vb" />
+    <Compile Include="Controlador\ConexionBaseDeDatos.vb" />
+    <Compile Include="Controlador\ControladorCliente.vb" />
+    <Compile Include="Controlador\ControladorCuaderno.vb" />
+    <Compile Include="Controlador\ControladorIncidencia.vb" />
+    <Compile Include="Controlador\ControladorLogin.vb" />
+    <Compile Include="Controlador\ControladorMaterial.vb" />
+    <Compile Include="Controlador\ControladorParte.vb" />
+    <Compile Include="Controlador\ControladorProveedor.vb" />
+    <Compile Include="Controlador\ControladorTelefono.vb" />
+    <Compile Include="Controlador\ControladorUsuario.vb" />
+    <Compile Include="Modelo\Administracion.vb" />
+    <Compile Include="Modelo\Cliente.vb" />
+    <Compile Include="Modelo\Correo.vb" />
+    <Compile Include="Modelo\Cuaderno.vb" />
+    <Compile Include="Modelo\Incidencia.vb" />
+    <Compile Include="Modelo\Material.vb" />
+    <Compile Include="Modelo\ParteTrabajo.vb" />
+    <Compile Include="Modelo\Proveedor.vb" />
+    <Compile Include="Modelo\Puesto.vb" />
+    <Compile Include="Modelo\Red.vb" />
+    <Compile Include="Modelo\Subcuenta.vb" />
+    <Compile Include="Modelo\Telefono.vb" />
+    <Compile Include="Modelo\Usuario.vb" />
+    <Compile Include="Controlador\variablesYMetodos.vb" />
+    <Compile Include="Vista\frmAdvertencia.Designer.vb">
+      <DependentUpon>frmAdvertencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmAdvertencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cliente\frmClienteNuevo.Designer.vb">
+      <DependentUpon>frmClienteNuevo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cliente\frmClienteNuevo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cliente\frmClientes.Designer.vb">
+      <DependentUpon>frmClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cliente\frmClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cuaderno\frmCuaderno.Designer.vb">
+      <DependentUpon>frmCuaderno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cuaderno\frmCuaderno.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cuaderno\frmCuadernoEditarIncidencia.Designer.vb">
+      <DependentUpon>frmCuadernoEditarIncidencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cuaderno\frmCuadernoEditarIncidencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cuaderno\frmCuadernoNuevaIncidencia.Designer.vb">
+      <DependentUpon>frmCuadernoNuevaIncidencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cuaderno\frmCuadernoNuevaIncidencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cliente\frmEditarCliente.Designer.vb">
+      <DependentUpon>frmEditarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cliente\frmEditarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Parte\Formularios selección\frmSeleccionMaterial.Designer.vb">
+      <DependentUpon>frmSeleccionMaterial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Parte\Formularios selección\frmSeleccionMaterial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Parte\Formularios selección\frmSeleccionTecnico.Designer.vb">
+      <DependentUpon>frmSeleccionTecnico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Parte\Formularios selección\frmSeleccionTecnico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Parte\frmParteModificar.Designer.vb">
+      <DependentUpon>frmParteModificar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Parte\frmParteModificar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Proveedor\frmEditarProveedor.Designer.vb">
+      <DependentUpon>frmEditarProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Proveedor\frmEditarProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmGestionAplicacion.Designer.vb">
+      <DependentUpon>frmGestionAplicacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmGestionAplicacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Parte\frmParteNuevo.Designer.vb">
+      <DependentUpon>frmParteNuevo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Parte\frmParteNuevo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Parte\frmPartes.Designer.vb">
+      <DependentUpon>frmPartes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Parte\frmPartes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmPrincipal.Designer.vb">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Vista\Proveedor\frmProveedores.Designer.vb">
+      <DependentUpon>frmProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Proveedor\frmProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Proveedor\frmProveedorNuevo.Designer.vb">
+      <DependentUpon>frmProveedorNuevo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Proveedor\frmProveedorNuevo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmSalir.Designer.vb">
+      <DependentUpon>frmSalir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmSalir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vista\frmAdvertencia.resx">
+      <DependentUpon>frmAdvertencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cliente\frmClienteNuevo.resx">
+      <DependentUpon>frmClienteNuevo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cliente\frmClientes.resx">
+      <DependentUpon>frmClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cuaderno\frmCuaderno.resx">
+      <DependentUpon>frmCuaderno.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cuaderno\frmCuadernoEditarIncidencia.resx">
+      <DependentUpon>frmCuadernoEditarIncidencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cuaderno\frmCuadernoNuevaIncidencia.resx">
+      <DependentUpon>frmCuadernoNuevaIncidencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cliente\frmEditarCliente.resx">
+      <DependentUpon>frmEditarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Parte\Formularios selección\frmSeleccionMaterial.resx">
+      <DependentUpon>frmSeleccionMaterial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Parte\Formularios selección\frmSeleccionTecnico.resx">
+      <DependentUpon>frmSeleccionTecnico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Parte\frmParteModificar.resx">
+      <DependentUpon>frmParteModificar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Proveedor\frmEditarProveedor.resx">
+      <DependentUpon>frmEditarProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmGestionAplicacion.resx">
+      <DependentUpon>frmGestionAplicacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Parte\frmParteNuevo.resx">
+      <DependentUpon>frmParteNuevo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Parte\frmPartes.resx">
+      <DependentUpon>frmPartes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Proveedor\frmProveedores.resx">
+      <DependentUpon>frmProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Proveedor\frmProveedorNuevo.resx">
+      <DependentUpon>frmProveedorNuevo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmSalir.resx">
+      <DependentUpon>frmSalir.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\Cliente.datasource" />
+    <None Include="My Project\DataSources\Cuaderno.datasource" />
+    <None Include="My Project\DataSources\Material.datasource" />
+    <None Include="My Project\DataSources\ParteTrabajo.datasource" />
+    <None Include="My Project\DataSources\Proveedor.datasource" />
+    <None Include="My Project\DataSources\Telefono.datasource" />
+    <None Include="My Project\DataSources\Usuario.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
