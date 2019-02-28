@@ -5,7 +5,16 @@
     Public clienteId As Int32
     Public proveedorId As Int32
     Public cuadernoId As Int32
-
+    Public redId As Int32
+    Public correoId As Int32
+    Public parteId As Int32
+    Public listaTecnicos As String
+    Public listaMaterial As String
+    Public totalPrecioMaterial As Double
+    Public flagActivated As Boolean
+    Public listaPuestos As New ArrayList
+    Public listaSubcuentas As New ArrayList
+    Public rol As Int32
 
 
     ' la caña hasta que lo he logrado, función que oculta todos los formularios 
@@ -21,6 +30,34 @@
             End If
         Next
     End Sub
+    'esto se va a usar para mostrar u ocultar opciones dependiendo del rol.
+    Public Sub ocultar(frm As Form)
+        If rol = 4 Then
+            Dim miControl As Control
+            For Each miControl In frm.Controls
+                If (TypeOf (miControl) Is PictureBox) Then
+                    If miControl.Name = "imgAgregarGrande" Or miControl.Name = "imgAceptarGrande" Then
+                        miControl.Visible = False
+                    End If
+                    If miControl.Name = "imgAgregarPequena" Or miControl.Name = "imgAceptarPequena" Then
+                        miControl.Visible = False
+                    End If
+                End If
+            Next
+        End If
+    End Sub
+    ' esto lo que hace es que en los formularios para ver un cliente o proveedor
+    ' no dejar que se editen si está logueado como usuario 
+    Public Sub desactivar(frm As Form)
+        If rol = 4 Then
+            Dim miControl As Control
+            For Each miControl In frm.Controls
+                If (TypeOf (miControl) Is TextBox) Then
+                    miControl.Enabled = False
+                End If
+            Next
+        End If
+    End Sub
 
     ' sabiendo deshabilitar, habilitar se hace con la gorra... de listos y héroes está 
     ' el mundo lleno
@@ -29,7 +66,7 @@
     Public Sub habilitar()
         Dim miControl As Control
         For Each miControl In My.Application.OpenForms
-            If (TypeOf (miControl) Is Form) Then
+            If (TypeOf (miControl) Is Form And miControl.Name <> "frmIniciarPonFarr") Then
                 CType(miControl, Form).Show()
             End If
         Next
@@ -111,7 +148,7 @@
                 For Each miControl In objeto.Controls
                     If (TypeOf (miControl) Is TextBox) Then
                         nombreControl = miControl.Name
-                        If miControl.Text = "" And nombreControl.CompareTo("txtSolucion") <> 0 Then
+                        If miControl.Text = "" And nombreControl.CompareTo("txtSolucion") <> 0 And nombreControl.CompareTo("txtTecnico") <> 0 And nombreControl.CompareTo("lblPrecioTotal") <> 0 And nombreControl.CompareTo("txtMaterial") <> 0 Then
                             mensaje = " la solución es el único cuadro que puedes dejar en blanco," +
                                 " junto con el técnico y el material cuando creas un nuevo parte"
                             frmAdvertencia.Show()
@@ -122,7 +159,7 @@
                         End If
                     End If
                 Next
-            Case Else
+            Case "frmClienteNuevo", "frmProveedorNuevo"
                 ' comprobación para el caso de agregar cliente o agregar proveedor
                 For Each miControl In objeto.Controls
                     If (TypeOf (miControl) Is TextBox) Then
@@ -135,6 +172,32 @@
                                 Exit For
                             Else
                                 resultado = False
+                            End If
+                        End If
+                    End If
+                Next
+            Case "panelPuesto"
+                For Each miControl In objeto.controls
+                    If (TypeOf (miControl) Is TextBox) Then
+                        If (miControl.Text = "") Then
+                            mensaje = "Has dejado campos vacíos, debes rellenarlos todos"
+                            frmAdvertencia.Show()
+                            resultado = True
+                            Exit For
+                        Else
+                            resultado = False
+                        End If
+                    End If
+                Next
+            Case "frmCorreoEditar", "frmCorreoNuevo"
+                For Each miControl In objeto.controls
+                    If (TypeOf (miControl) Is TextBox) Then
+                        If miControl.Name = "txtProveedor" Or miControl.Name = "txtCliente" Then
+                            If (miControl.Text = "") Then
+                                mensaje = "Debes rellenar por lo menos un proveedor de internet y un cliente"
+                                frmAdvertencia.Show()
+                                resultado = True
+                                Exit For
                             End If
                         End If
                     End If
@@ -161,6 +224,18 @@
                 Dim combo As ComboBox
                 combo = miControl
                 combo.SelectedIndex = -1
+            End If
+            If (TypeOf miControl Is Panel) Then
+                For Each control As Control In miControl.Controls
+                    If (TypeOf (control) Is TextBox) Then
+                        control.Text = ""
+                    End If
+                    If (TypeOf (control) Is MaskedTextBox) Then
+                        Dim caja As MaskedTextBox
+                        caja = control
+                        caja.Clear()
+                    End If
+                Next
             End If
         Next
     End Sub

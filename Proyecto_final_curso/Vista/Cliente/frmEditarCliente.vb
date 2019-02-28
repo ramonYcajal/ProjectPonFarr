@@ -2,8 +2,9 @@
     Dim controlador As New ControladorCliente
 
     Private Sub frmEditarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         cargarContenido()
+        desactivar(Me)
+        ocultar(Me)
     End Sub
 
     Private Sub imgSalirGrande_MouseDown(sender As Object, e As MouseEventArgs) Handles imgSalirGrande.MouseDown
@@ -12,7 +13,6 @@
     Private Sub imgSalirGrande_MouseUp(sender As Object, e As MouseEventArgs) Handles imgSalirGrande.MouseUp
         imgSalirGrande.Visible = True
         Me.Close()
-        'frmClientes.Show()
     End Sub
     Private Sub cargarCliente(ByVal listaClientes As ArrayList)
         For Each cliente As Cliente In listaClientes
@@ -136,5 +136,51 @@
             'recargo el cliente en total
             cargarContenido()
         End If
+    End Sub
+
+    Private Sub txtCP_Enter(sender As Object, e As EventArgs) Handles txtCP.Enter
+        'esta línea lo que hace es que cuando el cursor está en este texbox es decir
+        'cuando el foco lo tiene el textbox, entonces lo que hace es borrar el portapapeles
+        'que es donde se pone el texto a la hora de copiar y pegar de tal modo que cuando
+        'vayas a hacer un control+v , el portapapeles está vacío y no pega nada.
+        Clipboard.Clear()
+    End Sub
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        frmSalir.Show()
+    End Sub
+
+    Private Sub GestionarAplicaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionarAplicaciónToolStripMenuItem.Click
+        deshabilitar()
+        frmLogin.Show()
+    End Sub
+
+    Private Sub CuadernoDeBitácoraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CuadernoDeBitácoraToolStripMenuItem.Click
+        Me.Close()
+        frmCuaderno.Show()
+    End Sub
+
+    Private Sub ProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProveedoresToolStripMenuItem.Click
+        Me.Close()
+        frmProveedores.Show()
+    End Sub
+
+    Private Sub CorreoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CorreoToolStripMenuItem.Click
+        Me.Close()
+        frmCorreos.Show()
+    End Sub
+
+    Private Sub RedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RedToolStripMenuItem.Click
+        Me.Close()
+        frmRedes.Show()
+    End Sub
+
+    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
+        Me.Close()
+        frmClientes.Show()
+    End Sub
+
+    Private Sub PartesDeTabajoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PartesDeTrabajoToolStripMenuItem.Click
+        Me.Close()
+        frmPartes.Show()
     End Sub
 End Class

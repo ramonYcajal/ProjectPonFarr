@@ -14,15 +14,16 @@
     Private usuarioGestion As String
     Private contrasenaGestion As String
     Private webGestion As String
+    Private subcuentas As New ArrayList
     'constructor por defecto
     Public Sub New()
 
     End Sub
     'constructor ampliado
-    Public Sub New(id As Integer, proveedor As String, idusuario As String, nombre As String, direccionCorreo As String, usuarioConexion As String, nombreCUentaConexions As String, contrasena As String, servidorCorreoEntrante As String, servidorCorreoSaliente As String, observaciones As String, subdominio As String, usuarioGestion As String, contrasenaGestion As String, webGestion As String)
+    Public Sub New(id As Integer, proveedor As String, nombre As String, direccionCorreo As String, usuarioConexion As String, nombreCUentaConexions As String, contrasena As String, servidorCorreoEntrante As String, servidorCorreoSaliente As String, observaciones As String, subdominio As String, usuarioGestion As String, contrasenaGestion As String, webGestion As String)
         Me.id = id
         Me.proveedor = proveedor
-        Me.idusuario = idusuario
+        ' Me.idusuario = idusuario
         Me.nombre = nombre
         Me.direccionCorreo = direccionCorreo
         Me.usuarioConexion = usuarioConexion
@@ -37,9 +38,9 @@
         Me.webGestion = webGestion
     End Sub
     'constructor ampliado
-    Public Sub New(proveedor As String, idusuario As String, nombre As String, direccionCorreo As String, usuarioConexion As String, nombreCUentaConexions As String, contrasena As String, servidorCorreoEntrante As String, servidorCorreoSaliente As String, observaciones As String, subdominio As String, usuarioGestion As String, contrasenaGestion As String, webGestion As String)
+    Public Sub New(proveedor As String, nombre As String, direccionCorreo As String, usuarioConexion As String, nombreCUentaConexions As String, contrasena As String, servidorCorreoEntrante As String, servidorCorreoSaliente As String, observaciones As String, subdominio As String, usuarioGestion As String, contrasenaGestion As String, webGestion As String)
         Me.proveedor = proveedor
-        Me.idusuario = idusuario
+        ' Me.idusuario = idusuario
         Me.nombre = nombre
         Me.direccionCorreo = direccionCorreo
         Me.usuarioConexion = usuarioConexion
@@ -72,14 +73,14 @@
         End Set
     End Property
 
-    Public Property Idusuario1 As String
-        Get
-            Return idusuario
-        End Get
-        Set(value As String)
-            idusuario = value
-        End Set
-    End Property
+    'Public Property Idusuario1 As String
+    '    Get
+    '        Return idusuario
+    '    End Get
+    '    Set(value As String)
+    '        idusuario = value
+    '    End Set
+    'End Property
 
     Public Property Nombre1 As String
         Get
@@ -186,6 +187,24 @@
         End Get
         Set(value As String)
             webGestion = value
+        End Set
+    End Property
+
+    Public Property Idusuario1 As String
+        Get
+            Return idusuario
+        End Get
+        Set(value As String)
+            idusuario = value
+        End Set
+    End Property
+
+    Public Property Subcuentas1 As ArrayList
+        Get
+            Return subcuentas
+        End Get
+        Set(value As ArrayList)
+            subcuentas = value
         End Set
     End Property
 End Class

@@ -10,6 +10,8 @@
     End Sub
     Private Sub imgAceptarGrande_MouseUp(sender As Object, e As MouseEventArgs) Handles imgAceptarGrande.MouseUp
         imgAceptarGrande.Visible = True
+        ' eto para el servidor mysql de xampp
+        Shell("c:\xampp\mysql_stop.bat")
         Application.Exit()
     End Sub
 

@@ -62,4 +62,42 @@
         End If
 
     End Sub
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        frmSalir.Show()
+    End Sub
+
+    Private Sub GestionarAplicaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionarAplicaciónToolStripMenuItem.Click
+        deshabilitar()
+        frmLogin.Show()
+    End Sub
+
+    Private Sub CuadernoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CuadernoToolStripMenuItem.Click
+        Me.Close()
+        frmCuaderno.Show()
+    End Sub
+
+    Private Sub ProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProveedoresToolStripMenuItem.Click
+        Me.Close()
+        frmProveedores.Show()
+    End Sub
+
+    Private Sub CorreoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CorreoToolStripMenuItem.Click
+        Me.Close()
+        frmCorreos.Show()
+    End Sub
+
+    Private Sub RedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RedToolStripMenuItem.Click
+        Me.Close()
+        frmRedes.Show()
+    End Sub
+
+    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
+        Me.Close()
+        frmClientes.Show()
+    End Sub
+
+    Private Sub PartesDeTabajoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PartesDeTrabajoToolStripMenuItem.Click
+        Me.Close()
+        frmPartes.Show()
+    End Sub
 End Class

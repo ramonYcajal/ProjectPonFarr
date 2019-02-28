@@ -13,14 +13,19 @@
         imgAceptarGrande.Visible = True
         Dim admin As New Administracion
         Dim control As New ControladorLogin
-        Dim log As Integer
+        Dim log As New ArrayList
         admin.Usuario1 = txtUsuario.Text
         admin.Contrasena1 = txtPwd.Text
+
         log = control.isLogged(admin)
-        If log <> 1 Then
+        If log.Item(0) <> 1 Then
             mensaje = "Error; usuario y/o contraseña incorrectos"
             frmAdvertencia.Show()
+        ElseIf log.Item(1) = 4 Then
+            mensaje = "Este usuario carece de privilegios para loguearse aquí."
+            frmAdvertencia.Show()
         Else
+            rol = log.Item(1)
             frmGestionAplicacion.Show()
             Me.Close()
 
@@ -36,7 +41,4 @@
         Me.Close()
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
 End Class

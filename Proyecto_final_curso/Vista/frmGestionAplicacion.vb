@@ -2,10 +2,16 @@
 
 
     Private Sub frmGestionAplicacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If rol = 3 Then
+            TabPage2.Parent = Nothing
+        Else
+            TabPage2.Parent = TabControl1
+        End If
         cargarUsuarios()
         cargarMaterial()
         ' me pone los texbox del material a cero
         inicializarTexbox()
+
     End Sub
 
     Private Sub imgAceptarGrande_MouseDown(sender As Object, e As MouseEventArgs) Handles imgAceptarGrande.MouseDown
@@ -181,5 +187,23 @@
         filtro = "%" + txtFiltrar.Text + "%"
         listaMaterial = controlador.filtrarMaterial(filtro)
         DataRepeater2.DataSource = listaMaterial
+    End Sub
+
+    Private Sub aceptarGrande_MouseDown(sender As Object, e As MouseEventArgs) Handles aceptarGrande.MouseDown
+        aceptarGrande.Visible = False
+    End Sub
+    Private Sub aceptarGrande_MouseUp(sender As Object, e As MouseEventArgs) Handles aceptarGrande.MouseUp
+        aceptarGrande.Visible = True
+        Dim controlador As New ControladorLogin
+        Dim resultado As Int32
+        resultado = controlador.cambioContrasena(txtContrasenaVieja.Text, txtContrasenaNueva.Text)
+        If resultado = 1 Then
+            mensaje = "Cambio contraseña correcto"
+            frmAdvertencia.Show()
+        Else
+            mensaje = "Contraseña incorrecta"
+            frmAdvertencia.Show()
+        End If
+
     End Sub
 End Class

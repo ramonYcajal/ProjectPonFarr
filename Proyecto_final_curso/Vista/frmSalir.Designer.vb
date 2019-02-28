@@ -25,18 +25,19 @@ Partial Class frmSalir
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSalir))
         Me.txtMensaje = New System.Windows.Forms.TextBox()
-        Me.lblPonFarr = New System.Windows.Forms.Label()
         Me.imgAceptarGrande = New System.Windows.Forms.PictureBox()
         Me.imgSalirGrande = New System.Windows.Forms.PictureBox()
         Me.imgSalirPequena = New System.Windows.Forms.PictureBox()
         Me.imgAceptarPequena = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.imgAceptarGrande, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgSalirGrande, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgSalirPequena, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgAceptarPequena, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtMensaje
@@ -45,22 +46,11 @@ Partial Class frmSalir
         Me.txtMensaje.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtMensaje.Enabled = False
         Me.txtMensaje.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMensaje.Location = New System.Drawing.Point(19, 28)
+        Me.txtMensaje.Location = New System.Drawing.Point(3, 109)
         Me.txtMensaje.Multiline = True
         Me.txtMensaje.Name = "txtMensaje"
         Me.txtMensaje.Size = New System.Drawing.Size(308, 71)
         Me.txtMensaje.TabIndex = 0
-        '
-        'lblPonFarr
-        '
-        Me.lblPonFarr.AutoSize = True
-        Me.lblPonFarr.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPonFarr.ForeColor = System.Drawing.Color.Black
-        Me.lblPonFarr.Location = New System.Drawing.Point(301, 0)
-        Me.lblPonFarr.Name = "lblPonFarr"
-        Me.lblPonFarr.Size = New System.Drawing.Size(89, 25)
-        Me.lblPonFarr.TabIndex = 66
-        Me.lblPonFarr.Text = "Pon Farr"
         '
         'imgAceptarGrande
         '
@@ -109,8 +99,8 @@ Partial Class frmSalir
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.txtMensaje)
-        Me.Panel1.Controls.Add(Me.lblPonFarr)
         Me.Panel1.Controls.Add(Me.imgAceptarGrande)
         Me.Panel1.Controls.Add(Me.imgAceptarPequena)
         Me.Panel1.Controls.Add(Me.imgSalirGrande)
@@ -119,6 +109,20 @@ Partial Class frmSalir
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(395, 241)
         Me.Panel1.TabIndex = 71
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(290, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 71
+        Me.PictureBox1.TabStop = False
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.IsBalloon = True
         '
         'frmSalir
         '
@@ -137,16 +141,17 @@ Partial Class frmSalir
         CType(Me.imgAceptarPequena, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents txtMensaje As TextBox
-    Friend WithEvents lblPonFarr As Label
     Friend WithEvents imgAceptarGrande As PictureBox
     Friend WithEvents imgSalirGrande As PictureBox
     Friend WithEvents imgSalirPequena As PictureBox
     Friend WithEvents imgAceptarPequena As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

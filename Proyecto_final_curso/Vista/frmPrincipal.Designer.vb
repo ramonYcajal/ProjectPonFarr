@@ -242,6 +242,10 @@ Partial Class frmPrincipal
         Me.imgSalirPequena.TabIndex = 22
         Me.imgSalirPequena.TabStop = False
         '
+        'ToolTip1
+        '
+        Me.ToolTip1.IsBalloon = True
+        '
         'imgFlechaArriba
         '
         Me.imgFlechaArriba.Image = CType(resources.GetObject("imgFlechaArriba.Image"), System.Drawing.Image)

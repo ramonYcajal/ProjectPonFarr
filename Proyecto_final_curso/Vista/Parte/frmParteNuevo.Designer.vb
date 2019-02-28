@@ -26,17 +26,13 @@ Partial Class frmParteNuevo
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmParteNuevo))
         Me.lblFechaSalida = New System.Windows.Forms.Label()
         Me.lblFechaEntrada = New System.Windows.Forms.Label()
-        Me.panelMaterial = New System.Windows.Forms.Panel()
         Me.imgMenosGrande = New System.Windows.Forms.PictureBox()
         Me.imgMaterial = New System.Windows.Forms.PictureBox()
-        Me.cmbMaterial = New System.Windows.Forms.ComboBox()
-        Me.lblPrecio = New System.Windows.Forms.Label()
         Me.imgMasGrande = New System.Windows.Forms.PictureBox()
         Me.imgMasPequena = New System.Windows.Forms.PictureBox()
         Me.imgMenosPequena = New System.Windows.Forms.PictureBox()
         Me.txtCliente = New System.Windows.Forms.TextBox()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
-        Me.cmbTecnico = New System.Windows.Forms.ComboBox()
         Me.txtProblema = New System.Windows.Forms.TextBox()
         Me.txtSolucion = New System.Windows.Forms.TextBox()
         Me.txtProducto = New System.Windows.Forms.TextBox()
@@ -57,10 +53,25 @@ Partial Class frmParteNuevo
         Me.imgTecnico = New System.Windows.Forms.PictureBox()
         Me.imgImprimirGrande = New System.Windows.Forms.PictureBox()
         Me.imgEuros = New System.Windows.Forms.PictureBox()
+        Me.imgQuitarTecnico = New System.Windows.Forms.PictureBox()
+        Me.imgAgregarTecnico = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionarAplicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IrAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CorreoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PartesDeTrabajoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CuadernoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.imgImprimirPequena = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.panelMaterial.SuspendLayout()
+        Me.lblPrecioTotal = New System.Windows.Forms.Label()
+        Me.txtTecnico = New System.Windows.Forms.TextBox()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
+        Me.txtMaterial = New System.Windows.Forms.TextBox()
         CType(Me.imgMenosGrande, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgMaterial, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgMasGrande, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,7 +92,12 @@ Partial Class frmParteNuevo
         CType(Me.imgTecnico, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgImprimirGrande, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgEuros, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgQuitarTecnico, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgAgregarTecnico, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         CType(Me.imgImprimirPequena, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblFechaSalida
@@ -91,9 +107,8 @@ Partial Class frmParteNuevo
         Me.lblFechaSalida.ForeColor = System.Drawing.Color.Maroon
         Me.lblFechaSalida.Location = New System.Drawing.Point(603, 73)
         Me.lblFechaSalida.Name = "lblFechaSalida"
-        Me.lblFechaSalida.Size = New System.Drawing.Size(67, 25)
+        Me.lblFechaSalida.Size = New System.Drawing.Size(0, 25)
         Me.lblFechaSalida.TabIndex = 56
-        Me.lblFechaSalida.Text = "Label2"
         '
         'lblFechaEntrada
         '
@@ -102,31 +117,15 @@ Partial Class frmParteNuevo
         Me.lblFechaEntrada.ForeColor = System.Drawing.Color.Maroon
         Me.lblFechaEntrada.Location = New System.Drawing.Point(58, 72)
         Me.lblFechaEntrada.Name = "lblFechaEntrada"
-        Me.lblFechaEntrada.Size = New System.Drawing.Size(67, 25)
+        Me.lblFechaEntrada.Size = New System.Drawing.Size(0, 25)
         Me.lblFechaEntrada.TabIndex = 55
-        Me.lblFechaEntrada.Text = "Label1"
-        '
-        'panelMaterial
-        '
-        Me.panelMaterial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.panelMaterial.Controls.Add(Me.imgMenosGrande)
-        Me.panelMaterial.Controls.Add(Me.imgMaterial)
-        Me.panelMaterial.Controls.Add(Me.cmbMaterial)
-        Me.panelMaterial.Controls.Add(Me.lblPrecio)
-        Me.panelMaterial.Controls.Add(Me.imgMasGrande)
-        Me.panelMaterial.Controls.Add(Me.imgMasPequena)
-        Me.panelMaterial.Controls.Add(Me.imgMenosPequena)
-        Me.panelMaterial.Location = New System.Drawing.Point(713, 566)
-        Me.panelMaterial.Name = "panelMaterial"
-        Me.panelMaterial.Size = New System.Drawing.Size(288, 150)
-        Me.panelMaterial.TabIndex = 52
         '
         'imgMenosGrande
         '
         Me.imgMenosGrande.Image = CType(resources.GetObject("imgMenosGrande.Image"), System.Drawing.Image)
-        Me.imgMenosGrande.Location = New System.Drawing.Point(116, 95)
+        Me.imgMenosGrande.Location = New System.Drawing.Point(806, 588)
         Me.imgMenosGrande.Name = "imgMenosGrande"
-        Me.imgMenosGrande.Size = New System.Drawing.Size(50, 50)
+        Me.imgMenosGrande.Size = New System.Drawing.Size(22, 26)
         Me.imgMenosGrande.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgMenosGrande.TabIndex = 30
         Me.imgMenosGrande.TabStop = False
@@ -135,7 +134,7 @@ Partial Class frmParteNuevo
         'imgMaterial
         '
         Me.imgMaterial.Image = CType(resources.GetObject("imgMaterial.Image"), System.Drawing.Image)
-        Me.imgMaterial.Location = New System.Drawing.Point(3, 3)
+        Me.imgMaterial.Location = New System.Drawing.Point(717, 565)
         Me.imgMaterial.Name = "imgMaterial"
         Me.imgMaterial.Size = New System.Drawing.Size(49, 49)
         Me.imgMaterial.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -143,33 +142,12 @@ Partial Class frmParteNuevo
         Me.imgMaterial.TabStop = False
         Me.ToolTip1.SetToolTip(Me.imgMaterial, "Materiales")
         '
-        'cmbMaterial
-        '
-        Me.cmbMaterial.DisplayMember = "material"
-        Me.cmbMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbMaterial.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbMaterial.FormattingEnabled = True
-        Me.cmbMaterial.Location = New System.Drawing.Point(4, 58)
-        Me.cmbMaterial.Name = "cmbMaterial"
-        Me.cmbMaterial.Size = New System.Drawing.Size(278, 33)
-        Me.cmbMaterial.TabIndex = 22
-        '
-        'lblPrecio
-        '
-        Me.lblPrecio.AutoSize = True
-        Me.lblPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrecio.ForeColor = System.Drawing.Color.Maroon
-        Me.lblPrecio.Location = New System.Drawing.Point(218, 112)
-        Me.lblPrecio.Name = "lblPrecio"
-        Me.lblPrecio.Size = New System.Drawing.Size(0, 24)
-        Me.lblPrecio.TabIndex = 24
-        '
         'imgMasGrande
         '
         Me.imgMasGrande.Image = CType(resources.GetObject("imgMasGrande.Image"), System.Drawing.Image)
-        Me.imgMasGrande.Location = New System.Drawing.Point(19, 95)
+        Me.imgMasGrande.Location = New System.Drawing.Point(772, 588)
         Me.imgMasGrande.Name = "imgMasGrande"
-        Me.imgMasGrande.Size = New System.Drawing.Size(50, 50)
+        Me.imgMasGrande.Size = New System.Drawing.Size(22, 26)
         Me.imgMasGrande.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgMasGrande.TabIndex = 28
         Me.imgMasGrande.TabStop = False
@@ -178,9 +156,9 @@ Partial Class frmParteNuevo
         'imgMasPequena
         '
         Me.imgMasPequena.Image = CType(resources.GetObject("imgMasPequena.Image"), System.Drawing.Image)
-        Me.imgMasPequena.Location = New System.Drawing.Point(21, 97)
+        Me.imgMasPequena.Location = New System.Drawing.Point(774, 590)
         Me.imgMasPequena.Name = "imgMasPequena"
-        Me.imgMasPequena.Size = New System.Drawing.Size(46, 46)
+        Me.imgMasPequena.Size = New System.Drawing.Size(18, 22)
         Me.imgMasPequena.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgMasPequena.TabIndex = 29
         Me.imgMasPequena.TabStop = False
@@ -188,9 +166,9 @@ Partial Class frmParteNuevo
         'imgMenosPequena
         '
         Me.imgMenosPequena.Image = CType(resources.GetObject("imgMenosPequena.Image"), System.Drawing.Image)
-        Me.imgMenosPequena.Location = New System.Drawing.Point(118, 97)
+        Me.imgMenosPequena.Location = New System.Drawing.Point(808, 590)
         Me.imgMenosPequena.Name = "imgMenosPequena"
-        Me.imgMenosPequena.Size = New System.Drawing.Size(46, 46)
+        Me.imgMenosPequena.Size = New System.Drawing.Size(18, 22)
         Me.imgMenosPequena.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgMenosPequena.TabIndex = 31
         Me.imgMenosPequena.TabStop = False
@@ -215,17 +193,6 @@ Partial Class frmParteNuevo
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(285, 33)
         Me.txtTelefono.TabIndex = 43
-        '
-        'cmbTecnico
-        '
-        Me.cmbTecnico.DisplayMember = "nombre"
-        Me.cmbTecnico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTecnico.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbTecnico.FormattingEnabled = True
-        Me.cmbTecnico.Location = New System.Drawing.Point(718, 511)
-        Me.cmbTecnico.Name = "cmbTecnico"
-        Me.cmbTecnico.Size = New System.Drawing.Size(278, 33)
-        Me.cmbTecnico.TabIndex = 57
         '
         'txtProblema
         '
@@ -373,6 +340,10 @@ Partial Class frmParteNuevo
         Me.PictureBox6.TabStop = False
         Me.ToolTip1.SetToolTip(Me.PictureBox6, "Problema")
         '
+        'ToolTip1
+        '
+        Me.ToolTip1.IsBalloon = True
+        '
         'PictureBox7
         '
         Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
@@ -398,7 +369,7 @@ Partial Class frmParteNuevo
         'imgTecnico
         '
         Me.imgTecnico.Image = CType(resources.GetObject("imgTecnico.Image"), System.Drawing.Image)
-        Me.imgTecnico.Location = New System.Drawing.Point(718, 456)
+        Me.imgTecnico.Location = New System.Drawing.Point(717, 406)
         Me.imgTecnico.Name = "imgTecnico"
         Me.imgTecnico.Size = New System.Drawing.Size(49, 49)
         Me.imgTecnico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -428,14 +399,118 @@ Partial Class frmParteNuevo
         Me.imgEuros.TabStop = False
         Me.ToolTip1.SetToolTip(Me.imgEuros, "Total en euros")
         '
+        'imgQuitarTecnico
+        '
+        Me.imgQuitarTecnico.Image = CType(resources.GetObject("imgQuitarTecnico.Image"), System.Drawing.Image)
+        Me.imgQuitarTecnico.Location = New System.Drawing.Point(805, 428)
+        Me.imgQuitarTecnico.Name = "imgQuitarTecnico"
+        Me.imgQuitarTecnico.Size = New System.Drawing.Size(23, 27)
+        Me.imgQuitarTecnico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imgQuitarTecnico.TabIndex = 34
+        Me.imgQuitarTecnico.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.imgQuitarTecnico, "Quitar")
+        '
+        'imgAgregarTecnico
+        '
+        Me.imgAgregarTecnico.Image = CType(resources.GetObject("imgAgregarTecnico.Image"), System.Drawing.Image)
+        Me.imgAgregarTecnico.Location = New System.Drawing.Point(772, 428)
+        Me.imgAgregarTecnico.Name = "imgAgregarTecnico"
+        Me.imgAgregarTecnico.Size = New System.Drawing.Size(23, 27)
+        Me.imgAgregarTecnico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imgAgregarTecnico.TabIndex = 32
+        Me.imgAgregarTecnico.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.imgAgregarTecnico, "Añadir")
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Tan
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.IrAToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1022, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1022, 33)
         Me.MenuStrip1.TabIndex = 76
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ArchivoToolStripMenuItem
+        '
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem, Me.GestionarAplicaciónToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.0!)
+        Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(88, 29)
+        Me.ArchivoToolStripMenuItem.Text = "Archivo"
+        '
+        'SalirToolStripMenuItem
+        '
+        Me.SalirToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.SalirToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon
+        Me.SalirToolStripMenuItem.Image = CType(resources.GetObject("SalirToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(258, 30)
+        Me.SalirToolStripMenuItem.Text = "Salir"
+        '
+        'GestionarAplicaciónToolStripMenuItem
+        '
+        Me.GestionarAplicaciónToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.GestionarAplicaciónToolStripMenuItem.Image = CType(resources.GetObject("GestionarAplicaciónToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.GestionarAplicaciónToolStripMenuItem.Name = "GestionarAplicaciónToolStripMenuItem"
+        Me.GestionarAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(258, 30)
+        Me.GestionarAplicaciónToolStripMenuItem.Text = "Gestionar Aplicación"
+        '
+        'IrAToolStripMenuItem
+        '
+        Me.IrAToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.CorreoToolStripMenuItem, Me.PartesDeTrabajoToolStripMenuItem1, Me.CuadernoToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.RedToolStripMenuItem})
+        Me.IrAToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.0!)
+        Me.IrAToolStripMenuItem.Name = "IrAToolStripMenuItem"
+        Me.IrAToolStripMenuItem.Size = New System.Drawing.Size(51, 29)
+        Me.IrAToolStripMenuItem.Text = "Ir a"
+        '
+        'ClientesToolStripMenuItem
+        '
+        Me.ClientesToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.ClientesToolStripMenuItem.Image = CType(resources.GetObject("ClientesToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(267, 30)
+        Me.ClientesToolStripMenuItem.Text = "Clientes"
+        '
+        'CorreoToolStripMenuItem
+        '
+        Me.CorreoToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.CorreoToolStripMenuItem.Image = CType(resources.GetObject("CorreoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CorreoToolStripMenuItem.Name = "CorreoToolStripMenuItem"
+        Me.CorreoToolStripMenuItem.Size = New System.Drawing.Size(267, 30)
+        Me.CorreoToolStripMenuItem.Text = "Correo"
+        '
+        'PartesDeTrabajoToolStripMenuItem1
+        '
+        Me.PartesDeTrabajoToolStripMenuItem1.BackColor = System.Drawing.Color.Tan
+        Me.PartesDeTrabajoToolStripMenuItem1.Image = CType(resources.GetObject("PartesDeTrabajoToolStripMenuItem1.Image"), System.Drawing.Image)
+        Me.PartesDeTrabajoToolStripMenuItem1.Name = "PartesDeTrabajoToolStripMenuItem1"
+        Me.PartesDeTrabajoToolStripMenuItem1.Size = New System.Drawing.Size(267, 30)
+        Me.PartesDeTrabajoToolStripMenuItem1.Text = "Partes de trabajo"
+        '
+        'CuadernoToolStripMenuItem
+        '
+        Me.CuadernoToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.CuadernoToolStripMenuItem.Image = CType(resources.GetObject("CuadernoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CuadernoToolStripMenuItem.Name = "CuadernoToolStripMenuItem"
+        Me.CuadernoToolStripMenuItem.Size = New System.Drawing.Size(267, 30)
+        Me.CuadernoToolStripMenuItem.Text = "Cuaderno de bitácora"
+        '
+        'ProveedoresToolStripMenuItem
+        '
+        Me.ProveedoresToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.ProveedoresToolStripMenuItem.Image = CType(resources.GetObject("ProveedoresToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(267, 30)
+        Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
+        '
+        'RedToolStripMenuItem
+        '
+        Me.RedToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.RedToolStripMenuItem.Image = CType(resources.GetObject("RedToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.RedToolStripMenuItem.Name = "RedToolStripMenuItem"
+        Me.RedToolStripMenuItem.Size = New System.Drawing.Size(267, 30)
+        Me.RedToolStripMenuItem.Text = "Red"
         '
         'imgImprimirPequena
         '
@@ -447,16 +522,61 @@ Partial Class frmParteNuevo
         Me.imgImprimirPequena.TabIndex = 78
         Me.imgImprimirPequena.TabStop = False
         '
-        'Label1
+        'lblPrecioTotal
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Maroon
-        Me.Label1.Location = New System.Drawing.Point(127, 774)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(67, 25)
-        Me.Label1.TabIndex = 79
-        Me.Label1.Text = "Label1"
+        Me.lblPrecioTotal.AutoSize = True
+        Me.lblPrecioTotal.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrecioTotal.ForeColor = System.Drawing.Color.Maroon
+        Me.lblPrecioTotal.Location = New System.Drawing.Point(127, 774)
+        Me.lblPrecioTotal.Name = "lblPrecioTotal"
+        Me.lblPrecioTotal.Size = New System.Drawing.Size(0, 25)
+        Me.lblPrecioTotal.TabIndex = 79
+        '
+        'txtTecnico
+        '
+        Me.txtTecnico.BackColor = System.Drawing.Color.Tan
+        Me.txtTecnico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTecnico.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTecnico.Location = New System.Drawing.Point(717, 461)
+        Me.txtTecnico.Multiline = True
+        Me.txtTecnico.Name = "txtTecnico"
+        Me.txtTecnico.ReadOnly = True
+        Me.txtTecnico.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtTecnico.Size = New System.Drawing.Size(283, 98)
+        Me.txtTecnico.TabIndex = 81
+        '
+        'PictureBox11
+        '
+        Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
+        Me.PictureBox11.Location = New System.Drawing.Point(774, 430)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(19, 23)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox11.TabIndex = 33
+        Me.PictureBox11.TabStop = False
+        '
+        'PictureBox12
+        '
+        Me.PictureBox12.Image = CType(resources.GetObject("PictureBox12.Image"), System.Drawing.Image)
+        Me.PictureBox12.Location = New System.Drawing.Point(807, 430)
+        Me.PictureBox12.Name = "PictureBox12"
+        Me.PictureBox12.Size = New System.Drawing.Size(19, 23)
+        Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox12.TabIndex = 35
+        Me.PictureBox12.TabStop = False
+        '
+        'txtMaterial
+        '
+        Me.txtMaterial.BackColor = System.Drawing.Color.Tan
+        Me.txtMaterial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtMaterial.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMaterial.Location = New System.Drawing.Point(717, 620)
+        Me.txtMaterial.Multiline = True
+        Me.txtMaterial.Name = "txtMaterial"
+        Me.txtMaterial.ReadOnly = True
+        Me.txtMaterial.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtMaterial.Size = New System.Drawing.Size(283, 98)
+        Me.txtMaterial.TabIndex = 82
         '
         'frmParteNuevo
         '
@@ -464,8 +584,19 @@ Partial Class frmParteNuevo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.NavajoWhite
         Me.ClientSize = New System.Drawing.Size(1022, 821)
+        Me.Controls.Add(Me.txtMaterial)
+        Me.Controls.Add(Me.imgMenosGrande)
+        Me.Controls.Add(Me.imgQuitarTecnico)
+        Me.Controls.Add(Me.imgMaterial)
+        Me.Controls.Add(Me.imgMasGrande)
+        Me.Controls.Add(Me.txtTecnico)
+        Me.Controls.Add(Me.imgMasPequena)
+        Me.Controls.Add(Me.imgAgregarTecnico)
+        Me.Controls.Add(Me.imgMenosPequena)
+        Me.Controls.Add(Me.PictureBox11)
         Me.Controls.Add(Me.imgEuros)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.PictureBox12)
+        Me.Controls.Add(Me.lblPrecioTotal)
         Me.Controls.Add(Me.imgImprimirGrande)
         Me.Controls.Add(Me.imgTecnico)
         Me.Controls.Add(Me.PictureBox8)
@@ -478,10 +609,8 @@ Partial Class frmParteNuevo
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblFechaSalida)
         Me.Controls.Add(Me.lblFechaEntrada)
-        Me.Controls.Add(Me.panelMaterial)
         Me.Controls.Add(Me.txtCliente)
         Me.Controls.Add(Me.txtTelefono)
-        Me.Controls.Add(Me.cmbTecnico)
         Me.Controls.Add(Me.txtProblema)
         Me.Controls.Add(Me.txtSolucion)
         Me.Controls.Add(Me.txtProducto)
@@ -497,8 +626,6 @@ Partial Class frmParteNuevo
         Me.Name = "frmParteNuevo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmParteNuevo"
-        Me.panelMaterial.ResumeLayout(False)
-        Me.panelMaterial.PerformLayout()
         CType(Me.imgMenosGrande, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgMaterial, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgMasGrande, System.ComponentModel.ISupportInitialize).EndInit()
@@ -519,7 +646,13 @@ Partial Class frmParteNuevo
         CType(Me.imgTecnico, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgImprimirGrande, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgEuros, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgQuitarTecnico, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgAgregarTecnico, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         CType(Me.imgImprimirPequena, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -527,11 +660,7 @@ Partial Class frmParteNuevo
 
     Friend WithEvents lblFechaSalida As Label
     Friend WithEvents lblFechaEntrada As Label
-    Friend WithEvents panelMaterial As Panel
-    Friend WithEvents cmbMaterial As ComboBox
-    Friend WithEvents lblPrecio As Label
     Friend WithEvents txtTelefono As TextBox
-    Friend WithEvents cmbTecnico As ComboBox
     Friend WithEvents txtProblema As TextBox
     Friend WithEvents txtSolucion As TextBox
     Friend WithEvents txtProducto As TextBox
@@ -558,7 +687,23 @@ Partial Class frmParteNuevo
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents imgImprimirGrande As PictureBox
     Friend WithEvents imgImprimirPequena As PictureBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblPrecioTotal As Label
     Friend WithEvents imgEuros As PictureBox
     Friend WithEvents txtCliente As TextBox
+    Friend WithEvents txtTecnico As TextBox
+    Friend WithEvents imgQuitarTecnico As PictureBox
+    Friend WithEvents imgAgregarTecnico As PictureBox
+    Friend WithEvents PictureBox11 As PictureBox
+    Friend WithEvents PictureBox12 As PictureBox
+    Friend WithEvents txtMaterial As TextBox
+    Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestionarAplicaciónToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents IrAToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CorreoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CuadernoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProveedoresToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RedToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PartesDeTrabajoToolStripMenuItem1 As ToolStripMenuItem
 End Class

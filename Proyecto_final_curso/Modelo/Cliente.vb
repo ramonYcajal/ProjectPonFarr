@@ -8,8 +8,6 @@
     Private domicilio As String
     Private poblacion As String
     Private provincia As String
-    'Private telef1 As String
-    'Private telef2 As String
     Private arrayTelefonos As New ArrayList
     Private codpos As String
 
@@ -18,7 +16,7 @@
 
     End Sub
     'constructor ampliado
-    Public Sub New(id As Integer, nombre As String, nif As String, personaContacto As String, email As String, observaciones As String, domicilio As String, poblacion As String, provincia As String, codpos As String)
+    Public Sub New(id As Integer, nombre As String, nif As String, personaContacto As String, email As String, observaciones As String, domicilio As String, poblacion As String, provincia As String, codpos As String, arrayTelefonos As ArrayList)
         Me.id = id
         Me.nombre = nombre
         Me.nif = nif
@@ -28,12 +26,11 @@
         Me.domicilio = domicilio
         Me.poblacion = poblacion
         Me.provincia = provincia
-        'Me.telef1 = telef1
-        'Me.telef2 = telef2
         Me.codpos = codpos
+        Me.arrayTelefonos = arrayTelefonos
     End Sub
     'constructor ampliado
-    Public Sub New(nombre As String, nif As String, personaContacto As String, email As String, observaciones As String, domicilio As String, poblacion As String, provincia As String, codpos As String)
+    Public Sub New(nombre As String, nif As String, personaContacto As String, email As String, observaciones As String, domicilio As String, poblacion As String, provincia As String, codpos As String, arrayTelefonos As ArrayList)
 
         Me.nombre = nombre
         Me.nif = nif
@@ -43,9 +40,8 @@
         Me.domicilio = domicilio
         Me.poblacion = poblacion
         Me.provincia = provincia
-        'Me.telef1 = telef1
-        'Me.telef2 = telef2
         Me.codpos = codpos
+        Me.arrayTelefonos = arrayTelefonos
     End Sub
     ' getters y setters
     Public Property Id1 As Integer

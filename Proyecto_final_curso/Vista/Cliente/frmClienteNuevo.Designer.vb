@@ -38,6 +38,16 @@ Partial Class frmClienteNuevo
         Me.imgAceptarGrande = New System.Windows.Forms.PictureBox()
         Me.imgAceptarPequena = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ArcivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionarAplicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IrAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CuadernoDeBitácoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CorreosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PartesDeTabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.imgClienteNombre = New System.Windows.Forms.PictureBox()
         Me.imgClienteDomicilio = New System.Windows.Forms.PictureBox()
@@ -59,13 +69,14 @@ Partial Class frmClienteNuevo
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.DataRepeater1 = New Microsoft.VisualBasic.PowerPacks.DataRepeater()
+        Me.TelefonoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.lblTelefono = New System.Windows.Forms.Label()
         Me.lblNombre = New System.Windows.Forms.Label()
-        Me.TelefonoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.imgSalirGrande, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgSalirPequena, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgAceptarGrande, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgAceptarPequena, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         CType(Me.imgClienteNombre, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgClienteDomicilio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgClientePoblacion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,48 +123,48 @@ Partial Class frmClienteNuevo
         'txtNombre
         '
         Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(68, 73)
+        Me.txtNombre.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre.Location = New System.Drawing.Point(68, 69)
         Me.txtNombre.MaxLength = 49
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(375, 29)
+        Me.txtNombre.Size = New System.Drawing.Size(375, 33)
         Me.txtNombre.TabIndex = 38
         '
         'txtCif
         '
         Me.txtCif.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCif.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCif.Location = New System.Drawing.Point(93, 146)
+        Me.txtCif.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCif.Location = New System.Drawing.Point(93, 142)
         Me.txtCif.MaxLength = 10
         Me.txtCif.Name = "txtCif"
-        Me.txtCif.Size = New System.Drawing.Size(201, 29)
+        Me.txtCif.Size = New System.Drawing.Size(201, 33)
         Me.txtCif.TabIndex = 39
         '
         'txtPersoCto
         '
         Me.txtPersoCto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPersoCto.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPersoCto.Location = New System.Drawing.Point(29, 441)
+        Me.txtPersoCto.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPersoCto.Location = New System.Drawing.Point(29, 437)
         Me.txtPersoCto.MaxLength = 50
         Me.txtPersoCto.Name = "txtPersoCto"
-        Me.txtPersoCto.Size = New System.Drawing.Size(322, 29)
+        Me.txtPersoCto.Size = New System.Drawing.Size(322, 33)
         Me.txtPersoCto.TabIndex = 51
         '
         'txtEmail
         '
         Me.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmail.Location = New System.Drawing.Point(93, 202)
+        Me.txtEmail.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEmail.Location = New System.Drawing.Point(93, 198)
         Me.txtEmail.MaxLength = 50
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(201, 29)
+        Me.txtEmail.Size = New System.Drawing.Size(201, 33)
         Me.txtEmail.TabIndex = 40
         '
         'txtObservaciones
         '
         Me.txtObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtObservaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtObservaciones.Location = New System.Drawing.Point(37, 611)
+        Me.txtObservaciones.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtObservaciones.Location = New System.Drawing.Point(37, 607)
         Me.txtObservaciones.Multiline = True
         Me.txtObservaciones.Name = "txtObservaciones"
         Me.txtObservaciones.Size = New System.Drawing.Size(558, 198)
@@ -162,41 +173,41 @@ Partial Class frmClienteNuevo
         'txtDomicilio
         '
         Me.txtDomicilio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDomicilio.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDomicilio.Location = New System.Drawing.Point(529, 146)
+        Me.txtDomicilio.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDomicilio.Location = New System.Drawing.Point(529, 142)
         Me.txtDomicilio.MaxLength = 150
         Me.txtDomicilio.Name = "txtDomicilio"
-        Me.txtDomicilio.Size = New System.Drawing.Size(460, 29)
+        Me.txtDomicilio.Size = New System.Drawing.Size(460, 33)
         Me.txtDomicilio.TabIndex = 43
         '
         'txtPoblacion
         '
         Me.txtPoblacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPoblacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPoblacion.Location = New System.Drawing.Point(527, 202)
+        Me.txtPoblacion.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPoblacion.Location = New System.Drawing.Point(527, 198)
         Me.txtPoblacion.MaxLength = 50
         Me.txtPoblacion.Name = "txtPoblacion"
-        Me.txtPoblacion.Size = New System.Drawing.Size(460, 29)
+        Me.txtPoblacion.Size = New System.Drawing.Size(460, 33)
         Me.txtPoblacion.TabIndex = 44
         '
         'txtProvincia
         '
         Me.txtProvincia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtProvincia.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtProvincia.Location = New System.Drawing.Point(93, 262)
+        Me.txtProvincia.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtProvincia.Location = New System.Drawing.Point(93, 258)
         Me.txtProvincia.MaxLength = 15
         Me.txtProvincia.Name = "txtProvincia"
-        Me.txtProvincia.Size = New System.Drawing.Size(254, 29)
+        Me.txtProvincia.Size = New System.Drawing.Size(254, 33)
         Me.txtProvincia.TabIndex = 46
         '
         'txtCP
         '
         Me.txtCP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCP.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCP.Location = New System.Drawing.Point(529, 262)
+        Me.txtCP.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCP.Location = New System.Drawing.Point(529, 258)
         Me.txtCP.MaxLength = 5
         Me.txtCP.Name = "txtCP"
-        Me.txtCP.Size = New System.Drawing.Size(122, 29)
+        Me.txtCP.Size = New System.Drawing.Size(122, 33)
         Me.txtCP.TabIndex = 47
         '
         'imgAceptarGrande
@@ -223,11 +234,97 @@ Partial Class frmClienteNuevo
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Tan
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArcivoToolStripMenuItem, Me.IrAToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1022, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1022, 33)
         Me.MenuStrip1.TabIndex = 63
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ArcivoToolStripMenuItem
+        '
+        Me.ArcivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem, Me.GestionarAplicaciónToolStripMenuItem})
+        Me.ArcivoToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.0!)
+        Me.ArcivoToolStripMenuItem.Name = "ArcivoToolStripMenuItem"
+        Me.ArcivoToolStripMenuItem.Size = New System.Drawing.Size(88, 29)
+        Me.ArcivoToolStripMenuItem.Text = "Archivo"
+        '
+        'SalirToolStripMenuItem
+        '
+        Me.SalirToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.SalirToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon
+        Me.SalirToolStripMenuItem.Image = CType(resources.GetObject("SalirToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(258, 30)
+        Me.SalirToolStripMenuItem.Text = "Salir"
+        '
+        'GestionarAplicaciónToolStripMenuItem
+        '
+        Me.GestionarAplicaciónToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.GestionarAplicaciónToolStripMenuItem.Image = CType(resources.GetObject("GestionarAplicaciónToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.GestionarAplicaciónToolStripMenuItem.Name = "GestionarAplicaciónToolStripMenuItem"
+        Me.GestionarAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(258, 30)
+        Me.GestionarAplicaciónToolStripMenuItem.Text = "Gestionar Aplicación"
+        '
+        'IrAToolStripMenuItem
+        '
+        Me.IrAToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.CuadernoDeBitácoraToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.CorreosToolStripMenuItem, Me.RedToolStripMenuItem, Me.PartesDeTabajoToolStripMenuItem})
+        Me.IrAToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.0!)
+        Me.IrAToolStripMenuItem.Name = "IrAToolStripMenuItem"
+        Me.IrAToolStripMenuItem.Size = New System.Drawing.Size(51, 29)
+        Me.IrAToolStripMenuItem.Text = "Ir a"
+        '
+        'ClientesToolStripMenuItem
+        '
+        Me.ClientesToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.ClientesToolStripMenuItem.Image = CType(resources.GetObject("ClientesToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(267, 30)
+        Me.ClientesToolStripMenuItem.Text = "Clientes"
+        '
+        'CuadernoDeBitácoraToolStripMenuItem
+        '
+        Me.CuadernoDeBitácoraToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.CuadernoDeBitácoraToolStripMenuItem.Image = CType(resources.GetObject("CuadernoDeBitácoraToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CuadernoDeBitácoraToolStripMenuItem.Name = "CuadernoDeBitácoraToolStripMenuItem"
+        Me.CuadernoDeBitácoraToolStripMenuItem.Size = New System.Drawing.Size(267, 30)
+        Me.CuadernoDeBitácoraToolStripMenuItem.Text = "Cuaderno de bitácora"
+        '
+        'ProveedoresToolStripMenuItem
+        '
+        Me.ProveedoresToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.ProveedoresToolStripMenuItem.Image = CType(resources.GetObject("ProveedoresToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(267, 30)
+        Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
+        '
+        'CorreosToolStripMenuItem
+        '
+        Me.CorreosToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.CorreosToolStripMenuItem.Image = CType(resources.GetObject("CorreosToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CorreosToolStripMenuItem.Name = "CorreosToolStripMenuItem"
+        Me.CorreosToolStripMenuItem.Size = New System.Drawing.Size(267, 30)
+        Me.CorreosToolStripMenuItem.Text = "Correos"
+        '
+        'RedToolStripMenuItem
+        '
+        Me.RedToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.RedToolStripMenuItem.Image = CType(resources.GetObject("RedToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.RedToolStripMenuItem.Name = "RedToolStripMenuItem"
+        Me.RedToolStripMenuItem.Size = New System.Drawing.Size(267, 30)
+        Me.RedToolStripMenuItem.Text = "Red"
+        '
+        'PartesDeTabajoToolStripMenuItem
+        '
+        Me.PartesDeTabajoToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.PartesDeTabajoToolStripMenuItem.Image = CType(resources.GetObject("PartesDeTabajoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.PartesDeTabajoToolStripMenuItem.Name = "PartesDeTabajoToolStripMenuItem"
+        Me.PartesDeTabajoToolStripMenuItem.Size = New System.Drawing.Size(267, 30)
+        Me.PartesDeTabajoToolStripMenuItem.Text = "Partes de tabajo"
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.IsBalloon = True
         '
         'imgClienteNombre
         '
@@ -453,6 +550,10 @@ Partial Class frmClienteNuevo
         Me.DataRepeater1.TabIndex = 78
         Me.DataRepeater1.Text = "DataRepeater1"
         '
+        'TelefonoBindingSource
+        '
+        Me.TelefonoBindingSource.DataSource = GetType(Proyecto_final_curso.Telefono)
+        '
         'lblTelefono
         '
         Me.lblTelefono.AutoSize = True
@@ -474,10 +575,6 @@ Partial Class frmClienteNuevo
         Me.lblNombre.Size = New System.Drawing.Size(40, 13)
         Me.lblNombre.TabIndex = 0
         Me.lblNombre.Text = "Label1"
-        '
-        'TelefonoBindingSource
-        '
-        Me.TelefonoBindingSource.DataSource = GetType(Proyecto_final_curso.Telefono)
         '
         'frmClienteNuevo
         '
@@ -513,10 +610,10 @@ Partial Class frmClienteNuevo
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.imgSalirGrande)
         Me.Controls.Add(Me.imgSalirPequena)
-        Me.Controls.Add(Me.imgAceptarGrande)
-        Me.Controls.Add(Me.imgAceptarPequena)
         Me.Controls.Add(Me.imgTelefClienteGrande)
         Me.Controls.Add(Me.PictureBox9)
+        Me.Controls.Add(Me.imgAceptarGrande)
+        Me.Controls.Add(Me.imgAceptarPequena)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmClienteNuevo"
@@ -526,6 +623,8 @@ Partial Class frmClienteNuevo
         CType(Me.imgSalirPequena, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgAceptarGrande, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgAceptarPequena, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         CType(Me.imgClienteNombre, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgClienteDomicilio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgClientePoblacion, System.ComponentModel.ISupportInitialize).EndInit()
@@ -590,4 +689,14 @@ Partial Class frmClienteNuevo
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents imgTelefClienteGrande As PictureBox
     Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents ArcivoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestionarAplicaciónToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents IrAToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CuadernoDeBitácoraToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProveedoresToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CorreosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RedToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PartesDeTabajoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
 End Class

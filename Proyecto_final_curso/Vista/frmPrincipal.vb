@@ -1,42 +1,50 @@
-﻿Imports System.Threading
+﻿Imports MySql.Data.MySqlClient
+Imports System.Threading
 
 
 Public Class frmPrincipal
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        comprobar()
+        ' esto arranca el servidor de xampp'
+        'appwinstyle.hide, lo que hace es ocultar la ventana de msdos para que el usuario no la vea
+        'Shell("c:\xampp\mysql_start.bat", AppWinStyle.Hide)
+        'comprobar()
 
     End Sub
-    Private Sub comprobar()
-        'el programa va con un archivo por defecto, un .dat que guarda un string que pone false
-        'la primera vez que lo lee el programa , ve que está en false y crea un hilo para 
-        ' crear la base de datos tablas y demás... luego el archivo se  reescribe y se pone en true
-        ' así cuando lo vuelve a leer, pone true y sabe que la base de datos ya ha sido creada
-        Dim archivo As IO.StreamReader
-        Dim aux As String
-        Dim fichero As IO.StreamWriter
-        archivo = IO.File.OpenText("existe.dat")
-        aux = archivo.ReadLine
-        archivo.Close()
-        If aux.Equals("false") Then
-            Dim hilo As Thread
-            hilo = New Thread(AddressOf tarea)
-            hilo.IsBackground = True
-            hilo.Start()
-            fichero = IO.File.CreateText("existe.dat")
-            fichero.Write("true")
-            fichero.Close()
-        End If
-    End Sub
-    Private Sub tarea()
-        Dim conductor As BaseDeDatos
-        conductor = New BaseDeDatos
-        MsgBox("Es la primera vez que me ejecutas, necesito un tiempo para crear todo el sistema, gracias", vbInformation, "PON FARR")
-        MsgBox("voy a crear la base de datos...", vbInformation, "PON FARR")
-        conductor.CrearBaseDeDatos()
-        MsgBox("base de datos creada, creando árbol de tablas...", vbInformation, "PON FARR")
-        conductor.crearTablas()
-        MsgBox("Ya puede comenzar a utilizar PON FARR", vbInformation, "PON FARR")
-    End Sub
+    'Private Sub comprobar()
+
+    '    'se va a modificar todo, en vez de comprobar un archivo, comprobará si existe la base de datos
+    '    ' si no existe, la creará con todos sus procedimientos almacenados y demás mierdas
+    '    Dim conn As New MySqlConnection
+    '    conn.ConnectionString = "server=localhost;;uid=root;pwd="
+    '    Dim cmd As MySqlCommand = New MySqlCommand("SELECT IF(EXISTS (SELECT SCHEMA_NAME " &
+    '    "FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'gestion'), 'Y','N')", conn)
+    '    conn.Open()
+    '    Dim exists As String = cmd.ExecuteScalar().ToString()
+    '    conn.Close()
+
+    '    If exists.Equals("N") Then
+    '        Me.WindowState = FormWindowState.Minimized
+    '        frmBarraDeProgreso.Show()
+    '        'Dim hilo As Thread
+    '        'hilo = New Thread(AddressOf tarea)
+    '        'hilo.IsBackground = True
+    '        'hilo.Start()
+    '    End If
+    'End Sub
+    'Private Sub tarea()
+    '    Dim conductor As BaseDeDatos
+    '    conductor = New BaseDeDatos
+
+    '    mensaje = "Es la primera vez que me ejecutas, necesito un tiempo para crear todo el sistema, gracias"
+    '    mensaje = "voy a crear la base de datos..."
+    '    conductor.CrearBaseDeDatos()
+    '    mensaje = "base de datos creada, creando árbol de tablas y procedimientos..."
+    '    conductor.crearTablas()
+    '    conductor.crearStoredProcedures()
+    '    mensaje = "Ya puedes comenzar a utilizar PON FARR"
+
+    'End Sub
+
     Private Sub imgTecnicoGrande_MouseDown(sender As Object, e As MouseEventArgs) Handles imgTecnicoGrande.MouseDown
         imgTecnicoGrande.Visible = False
 
@@ -84,6 +92,7 @@ Public Class frmPrincipal
     End Sub
     Private Sub imgLanGrande_MouseUp(sender As Object, e As MouseEventArgs) Handles imgLanGrande.MouseUp
         imgLanGrande.Visible = True
+        frmRedes.Show()
     End Sub
 
     Private Sub imgBuzonGrande_MouseDown(sender As Object, e As MouseEventArgs) Handles imgBuzonGrande.MouseDown
@@ -91,6 +100,7 @@ Public Class frmPrincipal
     End Sub
     Private Sub imgBuzonGrande_MouseUp(sender As Object, e As MouseEventArgs) Handles imgBuzonGrande.MouseUp
         imgBuzonGrande.Visible = True
+        frmCorreos.Show()
     End Sub
 
     Private Sub imgSalirGrande_MouseDown(sender As Object, e As MouseEventArgs) Handles imgSalirGrande.MouseDown
@@ -137,6 +147,7 @@ Public Class frmPrincipal
     End Sub
     Private Sub imgInfoGrande_MouseUp(sender As Object, e As MouseEventArgs) Handles imgInfoGrande.MouseUp
         imgInfoGrande.Visible = True
+        frmAcercaDe.Show()
 
     End Sub
 

@@ -101,4 +101,37 @@ Public Class ControladorUsuario
             frmAdvertencia.Show()
         End Try
     End Sub
+    Public Function filtrarUsuario(ByVal usuario As String) As ArrayList
+        Dim controlador As New ConexionBaseDeDatos
+        Dim lector As MySqlDataReader
+        Dim conexion As New MySqlConnection
+        Dim comando As New MySqlCommand
+        Dim listaUsuarios As New ArrayList
+        Try
+            conexion = controlador.conectar
+            comando.Connection = conexion
+            comando.CommandText = "filtrarUsuario"
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Parameters.AddWithValue("_filtro", usuario)
+            conexion.Open()
+            lector = comando.ExecuteReader
+            listaUsuarios = cargarArray(lector)
+            controlador.desconectar(conexion)
+        Catch ex As Exception
+            mensaje = ex.Message
+            frmAdvertencia.Show()
+        End Try
+        Return listaUsuarios
+    End Function
+    Private Function cargarArray(ByVal lector As MySqlDataReader) As ArrayList
+        Dim listaUsuarios As New ArrayList
+        If lector.HasRows Then
+            Do While lector.Read
+                Dim usuario As New Usuario
+                usuario.Nombre1 = lector.GetString(0)
+                listaUsuarios.Add(usuario)
+            Loop
+        End If
+        Return listaUsuarios
+    End Function
 End Class

@@ -6,6 +6,7 @@ Public Class ConexionBaseDeDatos
     Public Sub New()
 
     End Sub
+
     ' función que conecta con la base de datos y devuelve una variable de tipo mysqlconnection
     Public Function conectar() As MySqlConnection
         Try

@@ -27,15 +27,17 @@ Partial Class frmLogin
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.txtPwd = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.imgSalirGrande = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.imgAceptarGrande = New System.Windows.Forms.PictureBox()
         Me.imgAceptarPequena = New System.Windows.Forms.PictureBox()
+        Me.imgSalirGrande = New System.Windows.Forms.PictureBox()
         Me.imgSalirPequena = New System.Windows.Forms.PictureBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
-        CType(Me.imgSalirGrande, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgAceptarGrande, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgAceptarPequena, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgSalirGrande, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgSalirPequena, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -61,6 +63,7 @@ Partial Class frmLogin
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.txtUsuario)
         Me.Panel1.Controls.Add(Me.txtPwd)
         Me.Panel1.Controls.Add(Me.imgAceptarGrande)
@@ -72,16 +75,15 @@ Partial Class frmLogin
         Me.Panel1.Size = New System.Drawing.Size(415, 255)
         Me.Panel1.TabIndex = 2
         '
-        'imgSalirGrande
+        'PictureBox1
         '
-        Me.imgSalirGrande.Image = CType(resources.GetObject("imgSalirGrande.Image"), System.Drawing.Image)
-        Me.imgSalirGrande.Location = New System.Drawing.Point(360, 206)
-        Me.imgSalirGrande.Name = "imgSalirGrande"
-        Me.imgSalirGrande.Size = New System.Drawing.Size(40, 40)
-        Me.imgSalirGrande.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.imgSalirGrande.TabIndex = 71
-        Me.imgSalirGrande.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.imgSalirGrande, "Cerrar")
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(159, 124)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(115, 117)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 75
+        Me.PictureBox1.TabStop = False
         '
         'imgAceptarGrande
         '
@@ -104,6 +106,17 @@ Partial Class frmLogin
         Me.imgAceptarPequena.TabIndex = 74
         Me.imgAceptarPequena.TabStop = False
         '
+        'imgSalirGrande
+        '
+        Me.imgSalirGrande.Image = CType(resources.GetObject("imgSalirGrande.Image"), System.Drawing.Image)
+        Me.imgSalirGrande.Location = New System.Drawing.Point(360, 206)
+        Me.imgSalirGrande.Name = "imgSalirGrande"
+        Me.imgSalirGrande.Size = New System.Drawing.Size(40, 40)
+        Me.imgSalirGrande.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imgSalirGrande.TabIndex = 71
+        Me.imgSalirGrande.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.imgSalirGrande, "Cerrar")
+        '
         'imgSalirPequena
         '
         Me.imgSalirPequena.Image = CType(resources.GetObject("imgSalirPequena.Image"), System.Drawing.Image)
@@ -113,6 +126,10 @@ Partial Class frmLogin
         Me.imgSalirPequena.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgSalirPequena.TabIndex = 72
         Me.imgSalirPequena.TabStop = False
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.IsBalloon = True
         '
         'frmLogin
         '
@@ -127,9 +144,10 @@ Partial Class frmLogin
         Me.Text = "frmLogin"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.imgSalirGrande, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgAceptarGrande, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgAceptarPequena, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgSalirGrande, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgSalirPequena, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -143,4 +161,5 @@ Partial Class frmLogin
     Friend WithEvents imgAceptarPequena As PictureBox
     Friend WithEvents imgSalirPequena As PictureBox
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

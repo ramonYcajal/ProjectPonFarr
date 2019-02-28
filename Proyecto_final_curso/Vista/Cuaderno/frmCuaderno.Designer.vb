@@ -25,7 +25,6 @@ Partial Class frmCuaderno
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCuaderno))
         Me.DataRepeater1 = New Microsoft.VisualBasic.PowerPacks.DataRepeater()
-        Me.CuadernoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.txtDeQuien = New System.Windows.Forms.TextBox()
         Me.lblEstado = New System.Windows.Forms.Label()
         Me.lblAQuien = New System.Windows.Forms.Label()
@@ -38,6 +37,15 @@ Partial Class frmCuaderno
         Me.imgSalirGrande = New System.Windows.Forms.PictureBox()
         Me.imgSalirPequena = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionarAplicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IrAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CorreoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ParteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.imgFiltrarGrande = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -51,15 +59,16 @@ Partial Class frmCuaderno
         Me.cmbUsuario = New System.Windows.Forms.ComboBox()
         Me.cmbEstadoIncidencia = New System.Windows.Forms.ComboBox()
         Me.txtCliente = New System.Windows.Forms.TextBox()
+        Me.CuadernoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataRepeater1.ItemTemplate.SuspendLayout()
         Me.DataRepeater1.SuspendLayout()
-        CType(Me.CuadernoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgModificarGrande, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgModificarPequena, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgAgregarGrande, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgAgregarPequena, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgSalirGrande, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgSalirPequena, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         CType(Me.imgFiltrarGrande, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,6 +78,7 @@ Partial Class frmCuaderno
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgFiltrarPequena, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CuadernoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataRepeater1
@@ -94,10 +104,6 @@ Partial Class frmCuaderno
         Me.DataRepeater1.Size = New System.Drawing.Size(994, 521)
         Me.DataRepeater1.TabIndex = 34
         Me.DataRepeater1.Text = "DataRepeater1"
-        '
-        'CuadernoBindingSource
-        '
-        Me.CuadernoBindingSource.DataSource = GetType(Proyecto_final_curso.Cuaderno)
         '
         'txtDeQuien
         '
@@ -224,16 +230,93 @@ Partial Class frmCuaderno
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Tan
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.IrAToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1022, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1022, 33)
         Me.MenuStrip1.TabIndex = 46
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ArchivoToolStripMenuItem
+        '
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem, Me.GestionarAplicaciónToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.0!)
+        Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(88, 29)
+        Me.ArchivoToolStripMenuItem.Text = "Archivo"
+        '
+        'SalirToolStripMenuItem
+        '
+        Me.SalirToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.SalirToolStripMenuItem.Image = CType(resources.GetObject("SalirToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(258, 30)
+        Me.SalirToolStripMenuItem.Text = "Salir"
+        '
+        'GestionarAplicaciónToolStripMenuItem
+        '
+        Me.GestionarAplicaciónToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.GestionarAplicaciónToolStripMenuItem.Image = CType(resources.GetObject("GestionarAplicaciónToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.GestionarAplicaciónToolStripMenuItem.Name = "GestionarAplicaciónToolStripMenuItem"
+        Me.GestionarAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(258, 30)
+        Me.GestionarAplicaciónToolStripMenuItem.Text = "Gestionar Aplicación"
+        '
+        'IrAToolStripMenuItem
+        '
+        Me.IrAToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.CorreoToolStripMenuItem, Me.ParteToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.RedToolStripMenuItem})
+        Me.IrAToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.0!)
+        Me.IrAToolStripMenuItem.Name = "IrAToolStripMenuItem"
+        Me.IrAToolStripMenuItem.Size = New System.Drawing.Size(51, 29)
+        Me.IrAToolStripMenuItem.Text = "Ir a"
+        '
+        'ClientesToolStripMenuItem
+        '
+        Me.ClientesToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.ClientesToolStripMenuItem.Image = CType(resources.GetObject("ClientesToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(227, 30)
+        Me.ClientesToolStripMenuItem.Text = "Clientes"
+        '
+        'CorreoToolStripMenuItem
+        '
+        Me.CorreoToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.CorreoToolStripMenuItem.Image = CType(resources.GetObject("CorreoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CorreoToolStripMenuItem.Name = "CorreoToolStripMenuItem"
+        Me.CorreoToolStripMenuItem.Size = New System.Drawing.Size(227, 30)
+        Me.CorreoToolStripMenuItem.Text = "Correo"
+        '
+        'ParteToolStripMenuItem
+        '
+        Me.ParteToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.ParteToolStripMenuItem.Image = CType(resources.GetObject("ParteToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ParteToolStripMenuItem.Name = "ParteToolStripMenuItem"
+        Me.ParteToolStripMenuItem.Size = New System.Drawing.Size(227, 30)
+        Me.ParteToolStripMenuItem.Text = "Partes de trabajo"
+        '
+        'ProveedoresToolStripMenuItem
+        '
+        Me.ProveedoresToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.ProveedoresToolStripMenuItem.Image = CType(resources.GetObject("ProveedoresToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(227, 30)
+        Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
+        '
+        'RedToolStripMenuItem
+        '
+        Me.RedToolStripMenuItem.BackColor = System.Drawing.Color.Tan
+        Me.RedToolStripMenuItem.Image = CType(resources.GetObject("RedToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.RedToolStripMenuItem.Name = "RedToolStripMenuItem"
+        Me.RedToolStripMenuItem.Size = New System.Drawing.Size(227, 30)
+        Me.RedToolStripMenuItem.Text = "Red"
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.IsBalloon = True
         '
         'imgFiltrarGrande
         '
         Me.imgFiltrarGrande.Image = CType(resources.GetObject("imgFiltrarGrande.Image"), System.Drawing.Image)
-        Me.imgFiltrarGrande.Location = New System.Drawing.Point(937, 48)
+        Me.imgFiltrarGrande.Location = New System.Drawing.Point(937, 55)
         Me.imgFiltrarGrande.Name = "imgFiltrarGrande"
         Me.imgFiltrarGrande.Size = New System.Drawing.Size(70, 70)
         Me.imgFiltrarGrande.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -244,7 +327,7 @@ Partial Class frmCuaderno
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(619, 29)
+        Me.PictureBox1.Location = New System.Drawing.Point(619, 36)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(37, 33)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -255,7 +338,7 @@ Partial Class frmCuaderno
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(619, 107)
+        Me.PictureBox2.Location = New System.Drawing.Point(619, 114)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(36, 29)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -266,7 +349,7 @@ Partial Class frmCuaderno
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(608, 68)
+        Me.PictureBox3.Location = New System.Drawing.Point(608, 75)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(47, 33)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -310,7 +393,7 @@ Partial Class frmCuaderno
         'PictureBox7
         '
         Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(692, 142)
+        Me.PictureBox7.Location = New System.Drawing.Point(692, 144)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(100, 50)
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -321,7 +404,7 @@ Partial Class frmCuaderno
         'imgFiltrarPequena
         '
         Me.imgFiltrarPequena.Image = CType(resources.GetObject("imgFiltrarPequena.Image"), System.Drawing.Image)
-        Me.imgFiltrarPequena.Location = New System.Drawing.Point(943, 53)
+        Me.imgFiltrarPequena.Location = New System.Drawing.Point(943, 60)
         Me.imgFiltrarPequena.Name = "imgFiltrarPequena"
         Me.imgFiltrarPequena.Size = New System.Drawing.Size(59, 59)
         Me.imgFiltrarPequena.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -333,7 +416,7 @@ Partial Class frmCuaderno
         Me.cmbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbUsuario.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbUsuario.FormattingEnabled = True
-        Me.cmbUsuario.Location = New System.Drawing.Point(661, 29)
+        Me.cmbUsuario.Location = New System.Drawing.Point(661, 36)
         Me.cmbUsuario.Name = "cmbUsuario"
         Me.cmbUsuario.Size = New System.Drawing.Size(270, 33)
         Me.cmbUsuario.TabIndex = 52
@@ -343,7 +426,7 @@ Partial Class frmCuaderno
         Me.cmbEstadoIncidencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbEstadoIncidencia.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbEstadoIncidencia.FormattingEnabled = True
-        Me.cmbEstadoIncidencia.Location = New System.Drawing.Point(661, 68)
+        Me.cmbEstadoIncidencia.Location = New System.Drawing.Point(661, 75)
         Me.cmbEstadoIncidencia.Name = "cmbEstadoIncidencia"
         Me.cmbEstadoIncidencia.Size = New System.Drawing.Size(270, 33)
         Me.cmbEstadoIncidencia.TabIndex = 53
@@ -352,10 +435,14 @@ Partial Class frmCuaderno
         '
         Me.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCliente.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCliente.Location = New System.Drawing.Point(661, 107)
+        Me.txtCliente.Location = New System.Drawing.Point(661, 114)
         Me.txtCliente.Name = "txtCliente"
         Me.txtCliente.Size = New System.Drawing.Size(270, 29)
         Me.txtCliente.TabIndex = 54
+        '
+        'CuadernoBindingSource
+        '
+        Me.CuadernoBindingSource.DataSource = GetType(Proyecto_final_curso.Cuaderno)
         '
         'frmCuaderno
         '
@@ -388,13 +475,14 @@ Partial Class frmCuaderno
         Me.DataRepeater1.ItemTemplate.ResumeLayout(False)
         Me.DataRepeater1.ItemTemplate.PerformLayout()
         Me.DataRepeater1.ResumeLayout(False)
-        CType(Me.CuadernoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgModificarGrande, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgModificarPequena, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgAgregarGrande, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgAgregarPequena, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgSalirGrande, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgSalirPequena, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         CType(Me.imgFiltrarGrande, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -404,6 +492,7 @@ Partial Class frmCuaderno
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgFiltrarPequena, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CuadernoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -436,4 +525,13 @@ Partial Class frmCuaderno
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestionarAplicaciónToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents IrAToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CorreoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ParteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProveedoresToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RedToolStripMenuItem As ToolStripMenuItem
 End Class

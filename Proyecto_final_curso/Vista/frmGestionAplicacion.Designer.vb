@@ -69,6 +69,12 @@ Partial Class frmGestionAplicacion
         Me.imgTB1AceptarGrande = New System.Windows.Forms.PictureBox()
         Me.imgTB1AceptarPequena = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.txtContrasenaNueva = New System.Windows.Forms.TextBox()
+        Me.txtContrasenaVieja = New System.Windows.Forms.TextBox()
+        Me.aceptarGrande = New System.Windows.Forms.PictureBox()
+        Me.aceptarPequena = New System.Windows.Forms.PictureBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.imgSalirGrande = New System.Windows.Forms.PictureBox()
         Me.imgSalirPequena = New System.Windows.Forms.PictureBox()
@@ -107,6 +113,11 @@ Partial Class frmGestionAplicacion
         CType(Me.imgDRPAceptarPequena, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgTB1AceptarGrande, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgTB1AceptarPequena, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.aceptarGrande, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.aceptarPequena, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgSalirGrande, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgSalirPequena, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -622,11 +633,80 @@ Partial Class frmGestionAplicacion
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.Tan
+        Me.TabPage2.Controls.Add(Me.PictureBox8)
+        Me.TabPage2.Controls.Add(Me.PictureBox7)
+        Me.TabPage2.Controls.Add(Me.txtContrasenaNueva)
+        Me.TabPage2.Controls.Add(Me.txtContrasenaVieja)
+        Me.TabPage2.Controls.Add(Me.aceptarGrande)
+        Me.TabPage2.Controls.Add(Me.aceptarPequena)
         Me.TabPage2.Location = New System.Drawing.Point(4, 34)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Size = New System.Drawing.Size(983, 660)
         Me.TabPage2.TabIndex = 2
         Me.TabPage2.Text = "Administración"
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
+        Me.PictureBox8.Location = New System.Drawing.Point(27, 190)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(82, 72)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 78
+        Me.PictureBox8.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+        Me.PictureBox7.Location = New System.Drawing.Point(27, 28)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(82, 72)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 77
+        Me.PictureBox7.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox7, "Contraseña anterior")
+        '
+        'txtContrasenaNueva
+        '
+        Me.txtContrasenaNueva.Location = New System.Drawing.Point(27, 268)
+        Me.txtContrasenaNueva.Name = "txtContrasenaNueva"
+        Me.txtContrasenaNueva.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtContrasenaNueva.Size = New System.Drawing.Size(234, 33)
+        Me.txtContrasenaNueva.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.txtContrasenaNueva, "Contraseña nueva")
+        '
+        'txtContrasenaVieja
+        '
+        Me.txtContrasenaVieja.Location = New System.Drawing.Point(27, 106)
+        Me.txtContrasenaVieja.Name = "txtContrasenaVieja"
+        Me.txtContrasenaVieja.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtContrasenaVieja.Size = New System.Drawing.Size(234, 33)
+        Me.txtContrasenaVieja.TabIndex = 0
+        '
+        'aceptarGrande
+        '
+        Me.aceptarGrande.Image = CType(resources.GetObject("aceptarGrande.Image"), System.Drawing.Image)
+        Me.aceptarGrande.Location = New System.Drawing.Point(280, 340)
+        Me.aceptarGrande.Name = "aceptarGrande"
+        Me.aceptarGrande.Size = New System.Drawing.Size(35, 44)
+        Me.aceptarGrande.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.aceptarGrande.TabIndex = 75
+        Me.aceptarGrande.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.aceptarGrande, "Aceptar")
+        '
+        'aceptarPequena
+        '
+        Me.aceptarPequena.Image = CType(resources.GetObject("aceptarPequena.Image"), System.Drawing.Image)
+        Me.aceptarPequena.Location = New System.Drawing.Point(285, 345)
+        Me.aceptarPequena.Name = "aceptarPequena"
+        Me.aceptarPequena.Size = New System.Drawing.Size(25, 34)
+        Me.aceptarPequena.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.aceptarPequena.TabIndex = 76
+        Me.aceptarPequena.TabStop = False
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.IsBalloon = True
         '
         'imgSalirGrande
         '
@@ -711,6 +791,12 @@ Partial Class frmGestionAplicacion
         CType(Me.imgDRPAceptarPequena, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgTB1AceptarGrande, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgTB1AceptarPequena, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.aceptarGrande, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.aceptarPequena, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgSalirGrande, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgSalirPequena, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -770,4 +856,10 @@ Partial Class frmGestionAplicacion
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents imgFiltrarGrande As PictureBox
     Friend WithEvents imgFiltrarPequena As PictureBox
+    Friend WithEvents txtContrasenaNueva As TextBox
+    Friend WithEvents txtContrasenaVieja As TextBox
+    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents aceptarGrande As PictureBox
+    Friend WithEvents aceptarPequena As PictureBox
 End Class

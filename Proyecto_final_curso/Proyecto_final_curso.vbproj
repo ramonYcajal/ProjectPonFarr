@@ -47,6 +47,8 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data">
       <HintPath>F:\conector mysql para vb.net\MySql.Data.dll</HintPath>
@@ -54,7 +56,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -79,12 +83,16 @@
     <Compile Include="Controlador\BaseDeDatos.vb" />
     <Compile Include="Controlador\ConexionBaseDeDatos.vb" />
     <Compile Include="Controlador\ControladorCliente.vb" />
+    <Compile Include="Controlador\ControladorCorreo.vb" />
     <Compile Include="Controlador\ControladorCuaderno.vb" />
     <Compile Include="Controlador\ControladorIncidencia.vb" />
     <Compile Include="Controlador\ControladorLogin.vb" />
     <Compile Include="Controlador\ControladorMaterial.vb" />
     <Compile Include="Controlador\ControladorParte.vb" />
     <Compile Include="Controlador\ControladorProveedor.vb" />
+    <Compile Include="Controlador\ControladorPuesto.vb" />
+    <Compile Include="Controlador\ControladorRed.vb" />
+    <Compile Include="Controlador\ControladorSubcuenta.vb" />
     <Compile Include="Controlador\ControladorTelefono.vb" />
     <Compile Include="Controlador\ControladorUsuario.vb" />
     <Compile Include="Modelo\Administracion.vb" />
@@ -101,6 +109,30 @@
     <Compile Include="Modelo\Telefono.vb" />
     <Compile Include="Modelo\Usuario.vb" />
     <Compile Include="Controlador\variablesYMetodos.vb" />
+    <Compile Include="Vista\Correo\frmCorreoEditar.Designer.vb">
+      <DependentUpon>frmCorreoEditar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Correo\frmCorreoEditar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Correo\frmCorreoNuevo.Designer.vb">
+      <DependentUpon>frmCorreoNuevo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Correo\frmCorreoNuevo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Correo\frmCorreos.Designer.vb">
+      <DependentUpon>frmCorreos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Correo\frmCorreos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmAcercaDe.Designer.vb">
+      <DependentUpon>frmAcercaDe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmAcercaDe.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\frmAdvertencia.Designer.vb">
       <DependentUpon>frmAdvertencia.vb</DependentUpon>
     </Compile>
@@ -141,6 +173,18 @@
       <DependentUpon>frmEditarCliente.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Cliente\frmEditarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmBarraDeProgreso.Designer.vb">
+      <DependentUpon>frmBarraDeProgreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmBarraDeProgreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmIniciarPonFarr.Designer.vb">
+      <DependentUpon>frmIniciarPonFarr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmIniciarPonFarr.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Parte\Formularios selección\frmSeleccionMaterial.Designer.vb">
@@ -231,8 +275,62 @@
     <Compile Include="Vista\frmSalir.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Red\frmEditarRed.Designer.vb">
+      <DependentUpon>frmEditarRed.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Red\frmEditarRed.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Red\frmRedes.Designer.vb">
+      <DependentUpon>frmRedes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Red\frmRedes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Red\frmRedNueva.Designer.vb">
+      <DependentUpon>frmRedNueva.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Red\frmRedNueva.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Reportes\informeCorreo.Designer.vb">
+      <DependentUpon>informeCorreo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Reportes\informeCorreo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Reportes\informeRed.Designer.vb">
+      <DependentUpon>informeRed.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Reportes\informeRed.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Reportes\parteImprimeSolucion.Designer.vb">
+      <DependentUpon>parteImprimeSolucion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Reportes\parteImprimeSolucion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Reportes\parteImprimeTodo.Designer.vb">
+      <DependentUpon>parteImprimeTodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Reportes\parteImprimeTodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Vista\Correo\frmCorreoEditar.resx">
+      <DependentUpon>frmCorreoEditar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Correo\frmCorreoNuevo.resx">
+      <DependentUpon>frmCorreoNuevo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Correo\frmCorreos.resx">
+      <DependentUpon>frmCorreos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmAcercaDe.resx">
+      <DependentUpon>frmAcercaDe.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmAdvertencia.resx">
       <DependentUpon>frmAdvertencia.vb</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +352,14 @@
     <EmbeddedResource Include="Vista\Cliente\frmEditarCliente.resx">
       <DependentUpon>frmEditarCliente.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmBarraDeProgreso.resx">
+      <DependentUpon>frmBarraDeProgreso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmIniciarPonFarr.resx">
+      <DependentUpon>frmIniciarPonFarr.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\parteEntrada.rdlc" />
+    <EmbeddedResource Include="Vista\parteSolucion.rdlc" />
     <EmbeddedResource Include="Vista\Parte\Formularios selección\frmSeleccionMaterial.resx">
       <DependentUpon>frmSeleccionMaterial.vb</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +402,29 @@
     <EmbeddedResource Include="Vista\frmSalir.resx">
       <DependentUpon>frmSalir.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Red\frmEditarRed.resx">
+      <DependentUpon>frmEditarRed.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Red\frmRedes.resx">
+      <DependentUpon>frmRedes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Red\frmRedNueva.resx">
+      <DependentUpon>frmRedNueva.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\reporteCorreo.rdlc" />
+    <EmbeddedResource Include="Vista\reporteRed.rdlc" />
+    <EmbeddedResource Include="Vista\Reportes\informeCorreo.resx">
+      <DependentUpon>informeCorreo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Reportes\informeRed.resx">
+      <DependentUpon>informeRed.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Reportes\parteImprimeSolucion.resx">
+      <DependentUpon>parteImprimeSolucion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Reportes\parteImprimeTodo.resx">
+      <DependentUpon>parteImprimeTodo.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -303,10 +432,13 @@
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\DataSources\Cliente.datasource" />
+    <None Include="My Project\DataSources\Correo.datasource" />
     <None Include="My Project\DataSources\Cuaderno.datasource" />
     <None Include="My Project\DataSources\Material.datasource" />
-    <None Include="My Project\DataSources\ParteTrabajo.datasource" />
     <None Include="My Project\DataSources\Proveedor.datasource" />
+    <None Include="My Project\DataSources\Puesto.datasource" />
+    <None Include="My Project\DataSources\Red.datasource" />
+    <None Include="My Project\DataSources\Subcuenta.datasource" />
     <None Include="My Project\DataSources\Telefono.datasource" />
     <None Include="My Project\DataSources\Usuario.datasource" />
     <None Include="My Project\Settings.settings">
